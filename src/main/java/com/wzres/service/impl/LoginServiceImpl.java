@@ -40,10 +40,9 @@ public class LoginServiceImpl implements LoginService {
         //参数为你要认证的用户名和密码
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user.getUserName(),user.getPassword());
 
-        Authentication authenticate = authenticationManager.authenticate(authenticationToken);
-
         //判断过程
-        //最终会调用到数据库查询的用户名和密码与authenticate封装的用户名和密码，两者对比如果不通过，authenticate对象为null
+        //authenticate方法最终会调用到数据库查询的用户名和密码与authenticate封装的用户名和密码，两者对比如果不通过，authenticate对象为null
+        Authentication authenticate = authenticationManager.authenticate(authenticationToken);
 
         //如果认证没通过，抛出异常提示
 
