@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-    @Override
+    /*@Override
     protected void configure(HttpSecurity http) throws Exception {
                 //todo 2
                 //关闭csrf
@@ -47,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //todo 3
         //把token校验过滤器添加到过滤器链中
         http.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
-    }
+    }*/
 
 
 

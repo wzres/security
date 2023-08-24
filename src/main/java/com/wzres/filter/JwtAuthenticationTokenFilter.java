@@ -23,7 +23,7 @@ import java.util.Objects;
  * @date 2023-08-21 23:25
  */
 
-@Component
+//@Component
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
     //TODO 3、登录校验，判断用户有没有登录
@@ -38,6 +38,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         String token = Request.getHeader("token");
 
         //判断token，为空就放行
+        filterChain.doFilter(Request,Response);
 
 
         //解析token获取其中的userid
