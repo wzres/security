@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloCOntroller {
 
     @GetMapping("/hello")
+    //@PreAuthorize("hasAuthority('test')")//该用户必须要有test权限才能访问
     public String hello(){
         return "springsecurity";
     }

@@ -50,7 +50,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         //判断redis获取的loginUser是否为空，为空就抛异常
 
 
-        //TODO 封装权限信息
+        //TODO 获取权限信息封装到Authentication中
         //如果能从redis中获取到loginUser就存入SecurityContextHolder
 
         //放行
