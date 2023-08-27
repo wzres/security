@@ -32,6 +32,10 @@ public class LoginUser implements UserDetails {
     @JSONField(serialize = false)
     private List<GrantedAuthority> authorities;
 
+    public LoginUser(User user) {
+        this.user = user;
+    }
+
     public LoginUser(User user, List<String> permissions) {
         this.user = user;
         this.permissions = permissions;
@@ -54,13 +58,14 @@ public class LoginUser implements UserDetails {
         return authorities;*/
 
         //第二种方式(函数式编程)
-        if (authorities != null) {
+      /*  if (authorities != null) {
             return authorities;
         }
         authorities = permissions.stream()
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
-        return authorities;
+        return authorities;*/
+        return null;
     }
 
     @Override
