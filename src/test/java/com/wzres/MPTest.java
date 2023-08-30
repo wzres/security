@@ -1,6 +1,7 @@
 package com.wzres;
 
 import com.wzres.domain.User;
+import com.wzres.mapper.MenuMapper;
 import com.wzres.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,16 @@ public class MPTest {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private MenuMapper menuMapper;
+
+    //测试自定义方法
+    @Test
+    public void testMenuMapper(){
+        List<String> list = menuMapper.selectPermsByUserId(2L);
+        System.out.println(list);
+    }
 
     //测试BCryptPasswordEncoder
     @Test

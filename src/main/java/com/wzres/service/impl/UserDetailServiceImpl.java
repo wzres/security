@@ -23,7 +23,7 @@ import java.util.Objects;
 @Service
 public class UserDetailServiceImpl implements UserDetailsService {
 
-    //TODO 1、用数据库查询
+    //TODO 1、从数据库查询账号密码
 
     @Autowired
     private UserMapper userMapper;
@@ -33,6 +33,8 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
         //TODO 查询对应的权限信息
         List<String> list = new ArrayList<>(Arrays.asList("test","dev"));
+
+        //TODO 从数据库查询权限信息
 
         return null;
     }

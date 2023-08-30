@@ -15,6 +15,7 @@ public class HelloCOntroller {
 
     @GetMapping("/hello")
     //@PreAuthorize("hasAuthority('test')")//该用户必须要有test权限才能访问
+    //@PreAuthorize("hasAuthority('system:dept:list')") //从数据库查询权限信息
     public String hello(){
         return "springsecurity";
     }
